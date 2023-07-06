@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "learn to code",
+      "description": "learn react, node, express, mongodb, and more"
+    },
+    {
+      "id": 2,
+      "title": "learn to cook",
+      "description": "learn to cook a variety of dishes"
+    },
+    {
+      "id": 3,
+      "title": "learn to play guitar",
+      "description": "learn to play guitar and sing"
+    },
+    {
+      "id": 4,
+      "title": "learn to swim",
+      "description": "get in the pool and swim"
+    },
+    {
+      "id": 6,
+      "title": "gym",
+      "description": "push up 50"
+    }
+  ]
+}
