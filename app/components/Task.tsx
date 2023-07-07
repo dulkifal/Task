@@ -4,8 +4,7 @@ import { FormEventHandler, useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import Modal from "./Modal";
 import { useRouter } from "next/navigation";
-import { deleteTodo, updateTodo } from "@/api";
-
+ 
 import task1 from "@/api";
 
 
