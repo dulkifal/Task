@@ -2,17 +2,21 @@
 
 import AddTask from "./components/AddTask";
 import TodoList from "./components/TodoList";
-import Modal from "./components/Modal";
+ 
 import { ITask } from "@/types/tasks";
 import { use, useEffect, useState } from "react";
+import task1 from "@/api";
+import { observer } from "mobx-react-lite";
 
 
-export default function Home() {
-  const [tasks, setTasks] = useState<ITask[]>([]);
-  useEffect(() => {
+  function Home() {
+  // const [tasks, setTasks] = useState<ITask[]>([]);
+  // useEffect(() => {
 
-    setTasks(JSON.parse(localStorage.getItem('tasks') || '[]'));
-  }, [ ])
+    // setTasks(JSON.parse(localStorage.getItem('tasks') || '[]'));
+    // setTasks(task1.todos)
+  // }, [ ])
+  const tasks = task1.todos
 
 
   return (
@@ -28,3 +32,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default observer(Home)

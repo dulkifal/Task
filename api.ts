@@ -1,5 +1,8 @@
  
 import { ITask } from "./types/tasks";
+ 
+import { makeAutoObservable } from "mobx";
+
 
  
 
@@ -30,3 +33,32 @@ export const deleteTodo = async (id: string): Promise<void> => {
   return;
 
 }
+
+//  mobx state tree actions
+ 
+class Task {
+  todos: ITask[] = [];
+
+  constructor() {
+    makeAutoObservable(this);
+    
+  }
+  addTodo = (todo: ITask) => {
+    this.todos.push(todo);
+    return this.todos;
+  }
+  updateTodo = (todo: ITask) => {
+    const index = this.todos.findIndex((t: ITask) => t.id === todo.id);
+    this.todos[index] = todo;
+    return this.todos;
+  }
+  deleteTodo = (id: string) => {
+    const index = this.todos.findIndex((t: ITask) => t.id === id);
+    this.todos.splice(index, 1);
+    return this.todos;
+  }
+
+}
+
+const task1 = new Task();
+export default task1; 

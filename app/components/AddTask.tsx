@@ -5,6 +5,11 @@ import {  FormEvent, FormEventHandler, useState } from 'react'
 import { addTodo } from '@/api';
 import { useRouter } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
+import task1 from "@/api";
+import { observer } from "mobx-react-lite";
+
+
+
 const AddTask = () => {
   const router = useRouter();
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -13,12 +18,13 @@ const AddTask = () => {
 
   const handleSubmit : FormEventHandler<HTMLFormElement> = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addTodo({
-      title,
-      description,
+    const newtask = {
       id: uuidv4(),
-      status: ''
-    });
+      title: title,
+      description: description,
+      status: 'todo'
+    }
+    task1.addTodo(newtask)
     setShowModal(false);
     
     router.refresh();
@@ -46,4 +52,4 @@ const AddTask = () => {
   )
 }
 
-export default AddTask
+export default observer(AddTask)

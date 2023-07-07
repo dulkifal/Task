@@ -6,6 +6,10 @@ import Modal from "./Modal";
 import { useRouter } from "next/navigation";
 import { deleteTodo, updateTodo } from "@/api";
 
+import task1 from "@/api";
+
+
+
 interface TaskProps {
     task: ITask
 }
@@ -18,30 +22,31 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     const [descriptionToEdit, setDescriptionToEdit] = useState<string>(task.description);
     const editSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault();
-        updateTodo({
+        const newtask = {
             id: task.id,
             title: titleToEdit,
             description: descriptionToEdit,
             status: task.status
-        });
+        }
+        task1.updateTodo(newtask);
         setShowModalEdit(false);
-         
+
         router.refresh();
     }
-    const updateStatus = async (statusValue:string) => {
-        updateTodo({
+    const updateStatus = async (statusValue: string) => {
+        const newtask = {
             id: task.id,
             title: task.title,
             description: task.description,
-            status:  statusValue
-        });
+            status: statusValue
+        }
+        task1.updateTodo(newtask);
         router.refresh();
     }
 
 
-    const deleteIt  = async () => {
-        
-      await  deleteTodo(task.id);
+    const deleteIt = async () => {
+        task1.deleteTodo(task.id);
         setShowModalDelete(false);
 
         router.refresh();
@@ -54,8 +59,8 @@ const Task: React.FC<TaskProps> = ({ task }) => {
         <tr key={task.id}>
             <td>{task.title}</td>
             <td>{task.description}</td>
-            <td> 
-                <select value={task.status} onChange={(e) =>  updateStatus(e.target.value) } className={`select select-bordered w-full max-w-xs  ${task.status  == 'todo' ? 'bg-blue-500' : task.status == 'in-progress' ? 'bg-yellow-500': 'bg-green-500'} `}>
+            <td>
+                <select value={task.status} onChange={(e) => updateStatus(e.target.value)} className={`select select-bordered w-full max-w-xs  ${task.status == 'todo' ? 'bg-blue-500' : task.status == 'in-progress' ? 'bg-yellow-500' : 'bg-green-500'} `}>
                     <option value="todo">TO DO</option>
                     <option value="in-progress">IN PROGRESS</option>
                     <option value="completed">COMPLETED</option>
@@ -79,7 +84,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                 <Modal showModel={showModalDelete} setShowModal={setShowModalDelete} >
                     <h3>Are you sure? </h3>
                     <div className='modal-action flex-col'>
-                        <button onClick={()=> deleteIt()} className="btn btn-primary w-full mt-2">Yes</button>
+                        <button onClick={() => deleteIt()} className="btn btn-primary w-full mt-2">Yes</button>
                         <button onClick={() => setShowModalDelete(false)} className="btn btn-primary w-full mt-2">No</button>
                     </div>
                 </Modal>
