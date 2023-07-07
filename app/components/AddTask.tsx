@@ -17,10 +17,10 @@ const AddTask = () => {
       title,
       description,
       id: uuidv4(),
-      status: 'todo'
+      status: ''
     });
     setShowModal(false);
-    console.log(title, description);
+    
     router.refresh();
   }
   return (
