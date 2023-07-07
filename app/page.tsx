@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
 
     setTasks(JSON.parse(localStorage.getItem('tasks') || '[]'));
-  }, [localStorage.getItem('tasks')])
+  }, [ ])
 
 
   return (
