@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is  a Task Management Application.
 
 ## Getting Started
 
-First, run the development server:
+First, clone the project to your PC with git 
+
 
 ```bash
+git clone https://github.com/dulkifal/Task.git
+
+cd Task
+
+npm i
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+ 
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Technology Stack:
 
-To learn more about Next.js, take a look at the following resources:
+ 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js ](https://nextjs.org/docs) - as the framework for building the application.
+- [TypeScript](https://www.typescriptlang.org/) -  to ensure type safety and improve maintainability.
+- [Tailwind CSS](https://tailwindcss.com/) - for styling and layout purposes.
+- [MST (Mobx State Tree)](https://mobx.js.org/README.html) - for state management  and local store.
+ 
+ 
+## User Interface:
+-  CRUD operation
+### Each task should have the following properties:
+- Title: A brief title describing the task.
+- Description: A detailed description of the task.
+- Status: The current status of the task (e.g., "To Do," "In Progress," "Completed").
+## Deployed on Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[https://task-kifli.vercel.app/](https://task-kifli.vercel.app/)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+check out my project and your comment on it
