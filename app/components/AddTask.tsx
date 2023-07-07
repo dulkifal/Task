@@ -17,6 +17,7 @@ const AddTask = () => {
       title,
       description,
       id: uuidv4(),
+      status: ''
     });
     setShowModal(false);
     console.log(title, description);
