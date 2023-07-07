@@ -26,6 +26,7 @@ export const updateTodo = async (todo: ITask): Promise<ITask> => {
     },
     body: JSON.stringify(todo),
   });
+  
   return await res.json();
 }
 

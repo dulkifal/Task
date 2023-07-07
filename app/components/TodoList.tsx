@@ -17,6 +17,7 @@ const TodoList :  React.FC<TodoListProps> = ({
             <th className="text-left">Task</th>
             <th className="text-left">Description</th>
             <th className="text-left">Status</th>
+            <th className="text-left"></th>
           </tr>
 
         </thead>

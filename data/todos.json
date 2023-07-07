@@ -3,27 +3,32 @@
     {
       "id": 1,
       "title": "learn to code",
-      "description": "learn react, node, express, mongodb, and more"
+      "description": "learn react, node, express, mongodb, and more",
+      "status": "todo"
     },
     {
       "id": 2,
       "title": "learn to cook",
-      "description": "learn to cook a variety of dishes"
+      "description": "learn to cook a variety of dishes",
+      "status": "in-progress"
     },
     {
       "id": 3,
       "title": "learn to play guitar",
-      "description": "learn to play guitar and sing"
+      "description": "learn to play guitar and sing",
+      "status": "completed"
     },
     {
       "id": 4,
       "title": "learn to swim",
-      "description": "get in the pool and swim"
+      "description": "get in the pool and swim",
+      "status": "todo"
     },
     {
       "id": 6,
       "title": "gym",
-      "description": "push up 50"
+      "description": "push up 50",
+      "status": "in-progress"
     }
   ]
 }
