@@ -25,7 +25,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             status: task.status
         });
         setShowModalEdit(false);
-        console.log(titleToEdit, descriptionToEdit);
+         
         router.refresh();
     }
     const updateStatus = async (statusValue:string) => {

@@ -20,7 +20,7 @@ const AddTask = () => {
       status: ''
     });
     setShowModal(false);
-    console.log(title, description);
+    
     router.refresh();
   }
   return (
