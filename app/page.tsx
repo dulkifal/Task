@@ -11,11 +11,13 @@ import { observer } from "mobx-react-lite";
 
   function Home() {
   // const [tasks, setTasks] = useState<ITask[]>([]);
-  // useEffect(() => {
-
-    // setTasks(JSON.parse(localStorage.getItem('tasks') || '[]'));
-    // setTasks(task1.todos)
-  // }, [ ])
+  useEffect(() => {
+//  load from local storage
+const localTasks = localStorage.getItem('tasks')
+if(localTasks){
+  task1.setTodos(JSON.parse(localTasks))
+}
+  }, [ ])
   const tasks = task1.todos
 
 

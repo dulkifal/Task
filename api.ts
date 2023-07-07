@@ -4,36 +4,7 @@ import { ITask } from "./types/tasks";
 import { makeAutoObservable } from "mobx";
 
 
- 
-
-export const addTodo = async (todo: ITask): Promise<ITask> => {
-  //  add to local storage
-  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  tasks.push(todo);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  return JSON.parse(localStorage.getItem("tasks") || "[]");
-};
-
-export const updateTodo = async (todo: ITask): Promise<ITask> => {
-  //  update to local storage
-  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  const index = tasks.findIndex((t: ITask) => t.id === todo.id);
-  tasks[index] = todo;
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  return JSON.parse(localStorage.getItem("tasks") || "[]");
-
-}
-
-export const deleteTodo = async (id: string): Promise<void> => {
-   
-  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-  const index = tasks.findIndex((t: ITask) => t.id === id);
-  tasks.splice(index, 1);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  return;
-
-}
-
+  
 //  mobx state tree actions
  
 class Task {
@@ -43,18 +14,28 @@ class Task {
     makeAutoObservable(this);
     
   }
+  setTodos = (todos: ITask[]) => {
+    this.todos = todos;
+  }
   addTodo = (todo: ITask) => {
     this.todos.push(todo);
+    // add to local storage
+     localStorage.setItem("tasks", JSON.stringify(this.todos));
+
     return this.todos;
   }
   updateTodo = (todo: ITask) => {
     const index = this.todos.findIndex((t: ITask) => t.id === todo.id);
     this.todos[index] = todo;
+    // update to local storage
+    localStorage.setItem("tasks", JSON.stringify(this.todos));
     return this.todos;
   }
   deleteTodo = (id: string) => {
     const index = this.todos.findIndex((t: ITask) => t.id === id);
     this.todos.splice(index, 1);
+    // update to local storage
+    localStorage.setItem("tasks", JSON.stringify(this.todos));
     return this.todos;
   }
 
