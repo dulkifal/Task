@@ -41,4 +41,4 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 [https://task-kifli.vercel.app/](https://task-kifli.vercel.app/)
 
-check out my project and your comment on it
+check out my project and add your comment on it

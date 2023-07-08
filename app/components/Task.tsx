@@ -59,10 +59,10 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             <td>{task.title}</td>
             <td>{task.description}</td>
             <td>
-                <select value={task.status} onChange={(e) => updateStatus(e.target.value)} className={`select select-bordered w-full max-w-xs  ${task.status == 'todo' ? 'bg-blue-500' : task.status == 'in-progress' ? 'bg-yellow-500' : 'bg-green-500'} `}>
+                <select value={task.status} onChange={(e) => updateStatus(e.target.value)} className={`select select-bordered w-1/2 max-w-xs  ${task.status == 'todo' ? 'bg-blue-500' : task.status == 'in-progress' ? 'bg-yellow-500' : 'bg-green-500'} `}>
                     <option value="todo">TO DO</option>
-                    <option value="in-progress">IN PROGRESS</option>
-                    <option value="completed">COMPLETED</option>
+                    <option value="in-progress">PROGRESS</option>
+                    <option value="completed">Done</option>
                 </select>
 
             </td>
@@ -72,9 +72,9 @@ const Task: React.FC<TaskProps> = ({ task }) => {
 
                     <form onSubmit={editSubmit} >
                         <h3 className='font-bold text-lg'>Edit Task</h3>
-                        <div className='modal-action flex-col'>
+                        <div className='modal-action flex-col gap-y-4'>
                             <input value={titleToEdit} onChange={(e) => setTitleToEdit(e.target.value)} type="text" placeholder="Title" className="input input-bordered w-full" />
-                            <input value={descriptionToEdit} onChange={(e) => setDescriptionToEdit(e.target.value)} type="text" placeholder="Description" className="input input-bordered w-full" />
+                            <textarea value={descriptionToEdit} onChange={(e) => setDescriptionToEdit(e.target.value)}   placeholder="Description" className="input input-bordered w-full" />
                             <button type="submit" className="btn btn-primary w-full mt-2">Edit Task</button>
                         </div>
                     </form>

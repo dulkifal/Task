@@ -2,22 +2,22 @@
 
 import AddTask from "./components/AddTask";
 import TodoList from "./components/TodoList";
- 
+
 import { ITask } from "@/types/tasks";
 import { use, useEffect, useState } from "react";
 import task1 from "@/api";
 import { observer } from "mobx-react-lite";
 
 
-  function Home() {
-  // const [tasks, setTasks] = useState<ITask[]>([]);
+function Home() {
+
   useEffect(() => {
-//  load from local storage
-const localTasks = localStorage.getItem('tasks')
-if(localTasks){
-  task1.setTodos(JSON.parse(localTasks))
-}
-  }, [ ])
+    //  load from local storage
+    const localTasks = localStorage.getItem('tasks')
+    if (localTasks) {
+      task1.setTodos(JSON.parse(localTasks))
+    }
+  }, [])
   const tasks = task1.todos
 
 
