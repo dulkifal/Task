@@ -1,44 +1,60 @@
-This is  a Task Management Application.
+ 
+ 
+# Project Title
+
+Task Management Application
+
+## Description
+
+This is a task management application built using Next.js, TypeScript, Tailwind CSS, MST (Mobx State Tree), and Git. The application allows users to create, view, update, and delete tasks.
 
 ## Getting Started
 
-First, clone the project to your PC with git 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+### Prerequisites
 
-```bash
-git clone https://github.com/dulkifal/Task.git
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
 
-cd Task
+### Installing
 
-npm i
+1. Clone the repository:
 
-npm run dev
- 
+```
+git clone https://github.com/dukifal/Task.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install the dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
+
+### Running the Application
+
+1. Start the development server:
+
+```
+npm run dev
+```
+
+2. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Built With
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [MST (Mobx State Tree)](https://mobx-state-tree.js.org/)
+- [Git](https://git-scm.com/)
+
+### Authors
+
+- Dulkifal - [Portfolio Website](https://dulkifal.github.io/)
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 
-## Technology Stack:
-
- 
-
-- [Next.js ](https://nextjs.org/docs) - as the framework for building the application.
-- [TypeScript](https://www.typescriptlang.org/) -  to ensure type safety and improve maintainability.
-- [Tailwind CSS](https://tailwindcss.com/) - for styling and layout purposes.
-- [MST (Mobx State Tree)](https://mobx.js.org/README.html) - for state management  and local store.
- 
- 
-## User Interface:
--  CRUD operation
-### Each task should have the following properties:
-- Title: A brief title describing the task.
-- Description: A detailed description of the task.
-- Status: The current status of the task (e.g., "To Do," "In Progress," "Completed").
-## Deployed on Vercel
-
-[https://task-kifli.vercel.app/](https://task-kifli.vercel.app/)
-
-check out my project and add your comment on it
