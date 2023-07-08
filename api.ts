@@ -41,5 +41,5 @@ class Task {
 
 }
 
-const task1 = new Task();
-export default task1; 
+const taskMobx = new Task();
+export default taskMobx; 

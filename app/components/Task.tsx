@@ -5,7 +5,7 @@ import { FiEdit, FiTrash2 } from "react-icons/fi";
 import Modal from "./Modal";
 import { useRouter } from "next/navigation";
  
-import task1 from "@/api";
+import taskMobx from "@/api";
 
 
 
@@ -27,7 +27,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             description: descriptionToEdit,
             status: task.status
         }
-        task1.updateTodo(newtask);
+        taskMobx.updateTodo(newtask);
         setShowModalEdit(false);
 
         router.refresh();
@@ -39,13 +39,13 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             description: task.description,
             status: statusValue
         }
-        task1.updateTodo(newtask);
+        taskMobx.updateTodo(newtask);
         router.refresh();
     }
 
 
     const deleteIt = async () => {
-        task1.deleteTodo(task.id);
+        taskMobx.deleteTodo(task.id);
         setShowModalDelete(false);
 
         router.refresh();

@@ -5,7 +5,7 @@ import {  FormEvent, FormEventHandler, useState } from 'react'
  
 import { useRouter } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
-import task1 from "@/api";
+import taskMobx from "@/api";
 import { observer } from "mobx-react-lite";
 
 
@@ -24,7 +24,7 @@ const AddTask = () => {
       description: description,
       status: 'todo'
     }
-    task1.addTodo(newtask)
+    taskMobx.addTodo(newtask)
     setShowModal(false);
     
     router.refresh();
