@@ -57,4 +57,7 @@ npm run dev
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
+## Deployment
+
+This application is deployed on [Vercel](https://task-kifli.vercel.app/).
 
